@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_puma_560">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="9.5376E-11 -0.021962 0.21792" 
+        rpy="0 0 0" />
+      <mass
+        value="15.787" />
+      <inertia
+        ixx="0.55024"
+        ixy="-2.863E-11"
+        ixz="1.6743E-10"
+        iyy="0.50424"
+        iyz="-0.022162"
+        izz="0.16071" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0.64897"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0.64897"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link_1">
+    <inertial>
+      <origin
+        xyz="2.2813E-06 0.022505 -0.0027897"
+        rpy="0 0 0" />
+      <mass
+        value="4.4341" />
+      <inertia
+        ixx="0.027328"
+        ixy="-1.5282E-06"
+        ixz="-2.2409E-08"
+        iyy="0.013316"
+        iyz="-0.00027854"
+        izz="0.027164" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="continuous">
+    <origin
+      xyz="0 0 0.64897"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link_1" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="Link_2">
+    <inertial>
+      <origin
+        xyz="0.082755 0.00088274 0.21527"
+        rpy="0 0 0" />
+      <mass
+        value="16.847" />
+      <inertia
+        ixx="0.097292"
+        ixy="-0.0056175"
+        ixz="-0.0042857"
+        iyy="0.59651"
+        iyz="-9.6614E-05"
+        izz="0.65976" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="Link_1" />
+    <child
+      link="Link_2" />
+    <axis
+      xyz="-0.00010835 0 -1" />
+  </joint>
+  <link
+    name="Link_3">
+    <inertial>
+      <origin
+        xyz="-1.1788E-06 0.088774 -0.01236"
+        rpy="0 0 0" />
+      <mass
+        value="4.6025" />
+      <inertia
+        ixx="0.082615"
+        ixy="4.837E-07"
+        ixz="3.6529E-07"
+        iyy="0.0091916"
+        iyz="2.2739E-06"
+        izz="0.087355" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3"
+    type="continuous">
+    <origin
+      xyz="0.43179 0.0048511 0.14185"
+      rpy="0 0.00010834 0.011978" />
+    <parent
+      link="Link_2" />
+    <child
+      link="Link_3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Link_4">
+    <inertial>
+      <origin
+        xyz="0.0005347 -2.7756E-17 -0.032405"
+        rpy="0 0 0" />
+      <mass
+        value="0.47079" />
+      <inertia
+        ixx="0.0007728"
+        ixy="4.2352E-21"
+        ixz="5.0487E-06"
+        iyy="0.00073772"
+        iyz="2.5437E-20"
+        izz="0.00046692" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.25098 0.25098 0.25098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4"
+    type="continuous">
+    <origin
+      xyz="0 0.43209 -0.012362"
+      rpy="-1.5706 -0.0098803 -0.0165" />
+    <parent
+      link="Link_3" />
+    <child
+      link="Link_4" />
+    <axis
+      xyz="0.016498 0 -0.99986" />
+  </joint>
+  <link
+    name="Link_5">
+    <inertial>
+      <origin
+        xyz="5.3025E-10 0.010974 -7.1165E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.077406" />
+      <inertia
+        ixx="4.3032E-05"
+        ixy="9.8382E-13"
+        ixz="1.205E-11"
+        iyy="1.6966E-05"
+        iyz="6.2843E-14"
+        izz="4.5414E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Link_4" />
+    <child
+      link="Link_5" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="Link_6">
+    <inertial>
+      <origin
+        xyz="1.1102E-16 -5.5511E-17 0.05588"
+        rpy="0 0 0" />
+      <mass
+        value="0.0055857" />
+      <inertia
+        ixx="5.3713E-07"
+        ixy="5.3198E-23"
+        ixz="-2.088E-22"
+        iyy="5.1845E-07"
+        iyz="1.3981E-22"
+        izz="1.0316E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_puma_560/meshes/Link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.5708 0.0089975 0" />
+    <parent
+      link="Link_5" />
+    <child
+      link="Link_6" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>

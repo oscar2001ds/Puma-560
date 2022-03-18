@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <!--rosparam file="$(find robot1_gazebo)/config/robot1_gazebo_control.yaml" command="load"/-->
+  <rosparam file="$(find robot_puma_560)/config/puma_gazebo_control_Position.yaml" command="load"/>
+  <param name="/use_sim_time" value="false"/>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+	<arg name="world_name" value="$(find robot1_description)/worlds/robot.world"/>
+	<arg name="paused" value="false"/>
+  </include>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
+  <param name="robot_description"
+         command="$(find xacro)/xacro '$(find robot_puma_560)/urdf/robot_puma_560.xacro'" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/robot1" args="joint_state_controller
+					  joint1_position_controller
+					  joint2_position_controller
+					  joint3_position_controller
+					  joint4_position_controller
+            joint5_position_controller
+					  joint6_position_controller"/>
+  <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+	output="screen" ns="/robot1" args="joint_state_controller
+					  joint_trajectory_controller"/-->
+
+  <!-- Run a python script to the send a service call to gazebo_ros to spawn a URDF robot -->
+   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-urdf -model robot1 -param robot_description -z 0.05"/>
+
+</launch>

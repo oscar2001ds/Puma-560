@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="/use_sim_time" value="true"/>
+  <arg name="px" doc="Coordenate X"/>
+  <arg name="py" doc="Coordenate Y"/>
+  <arg name="pz" doc="Coordenate Z"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_control" pkg="robot_puma_560" type="control.py" args="$(arg px) $(arg py) $(arg pz)" output="screen"/>
+  <node pkg="rostopic" type="rostopic" name="rostopic" args="pub /coordenates std_msgs/Float64 'data: 1.0'"/>
+</launch>
